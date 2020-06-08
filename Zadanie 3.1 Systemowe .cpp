@@ -21,11 +21,11 @@ int main(int argc,char *argv[])
 	{
 		exit(1);
 	}
-	while((ret_in=read(czytaj, &buffer, 2)) > 0) //zczytuje numery i wyswietla
+	while((ret_in=read(czytaj, &buffer, 2)) > 0) //czyta numery i wyświetla
 	{
-		int number = (((int)buffer[0] -48)*10 + (int)buffer[1] -48);
-		int result = number*3 ;
-		printf("%d * 3=%d\n",number,result);	
+	int number = (((int)buffer[0] -48)*10 + (int)buffer[1] -48);
+	int result = number*3 ;
+	printf("%d*3=%d\n",number,result);	
 			
 	}
 	close(czytaj);
