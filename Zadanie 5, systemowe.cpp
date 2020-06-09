@@ -47,7 +47,7 @@ void process();
         wait(&stat);
     }
     if (WIFEXITED(stat))
-    {printf("zakoñczono: %d\n\n",WEXITSTATUS(stat)); // rezultat}
+    {printf("zakoÅ„czono: %d\n\n",WEXITSTATUS(stat)); // rezultat}
     
 	
 	
