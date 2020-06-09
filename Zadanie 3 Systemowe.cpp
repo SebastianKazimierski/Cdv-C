@@ -4,7 +4,12 @@
 #include <unistd.h>
 #include<fcntl.h>
 int randomRange(int, int);
-
+int randomRange(int lower, int upper)
+{
+    int num;
+    num = (rand() % (upper - lower +1) + lower);
+    return num;
+}
 int main(int argc, char *argv[])
 {
 const int low = 10;
@@ -17,7 +22,7 @@ if(plik == NULL){
 printf("Nie udalo sie stworzyc pliku");
 exit(1);
 }
-    
+int randomRange(int lower, int upper)
 	
 char buffer[12];
 srand(time(0));
