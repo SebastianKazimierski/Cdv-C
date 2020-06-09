@@ -2,9 +2,6 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
-
-
-
 int main(int argc, char *argv[])
 {
 char nazwa[100];
@@ -26,8 +23,8 @@ if(argc != 2)
 	strcat(str, ".red");}
 else
   {strcat(nazwa, argv[1]);
-    strcat(str,argv[1]);
-    strcat(str, ".red");}
+ strcat(str,argv[1]);
+ strcat(str, ".red");}
   
   
 if((plik1 = open(nazwa, O_RDONLY)) == -1) //jeśli plik nie istnieje wyskoczy błąd
@@ -58,9 +55,9 @@ while((read(plik1,buf,1)) > 0) //odczytywanie z pliku 1
   }
   //zamkniecie plikow
 
-	close(plik1);
+close(plik1);
 
-	close(plik2);
+close(plik2);
   
 return 0;
 }
