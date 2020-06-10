@@ -17,10 +17,10 @@ if(argc != 2)
   }
 char nazwapliku[64];
 strcat(nazwapliku, argv[1]);
-int dir; //* zapisuje otwarcie katalogu
-FILE *wp; //* wskaznik, plik
-DIR *diretc; //* wskaznik, otwieranie /etc
-struct dirent *pdiretc; //* otwiera katalog
+int dir; 
+FILE *wp; 
+DIR *diretc;
+struct dirent *pdiretc;
 int process_id,pidrodzic;
 pidrodzic = 0;
 process_id = fork();
@@ -37,7 +37,7 @@ if ((wp=fopen(nazwapliku, "w")) == NULL) {perror("fopen");
 if((diretc= opendir("/etc")) == NULL) {perror("opendir: ");
     exit(1);
   }
-  while ((pdiretc = readdir(diretc)) != NULL)//*odczyt /etc i zapis do pliku
+  while ((pdiretc = readdir(diretc)) != NULL)
   {
     if(pdiretc->d_type == DT_REG)
     	{
@@ -47,7 +47,7 @@ if((diretc= opendir("/etc")) == NULL) {perror("opendir: ");
   						}	
   
 printf("pid dziecka: %d \npid rodzica: %d\n",getpid(),getppid());
-closedir (diretc);//*zamkykanie
+closedir (diretc);
 fclose(wp);
 exit(0);
 }
